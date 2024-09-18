@@ -4,6 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deep Link Redirection</title>
- 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Defina seu deep link e as URLs da App Store e Google Play
+        var deepLink = 'barataoapp://'; // Substitua pelo seu deep link
+        var iosStoreLink = 'https://apps.apple.com/br/app/barat%C3%A3o-combust%C3%ADveis/id1613535824'; // Link para App Store
+        var androidStoreLink = 'https://play.google.com/store/apps/details?id=com.barataoapp'; // Link para Google Play
+
+        // Detecta iOS
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = deepLink;
+
+        setTimeout(function () {
+            window.location.href = iosStoreLink;
+        }, 2500); // Tenta redirecionar para a App Store após 2.5 segundos, se o app não abrir
+
+        // Detecta Android
+        } else if (/android/i.test(userAgent)) {
+        window.location.href = deepLink;
+        setTimeout(function () {
+            window.location.href = androidStoreLink;
+        }, 2500); // Tenta redirecionar para a Google Play após 2.5 segundos, se o app não abrir
+
+        } else {
+        window.location.href = "https://barataocombutiveis.com.br/"
+        }
+    })
+  </script>
 </head>
 </html>
