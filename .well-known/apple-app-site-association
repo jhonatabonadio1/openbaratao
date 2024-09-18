@@ -3,9 +3,12 @@
     "apps": [],
     "details": [
       {
-        "appID": " VQ79RAAYD4.com.barataocombustiveis",
+        "appID": "VQ79RAAYD4.com.barataocombustiveis",
         "paths": [ "/" ]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": [ "VQ79RAAYD4.com.barataocombustiveis" ]
   }
 }
